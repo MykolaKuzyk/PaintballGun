@@ -12,7 +12,7 @@ namespace PaintballGun
 
             while (true)
             {
-                Console.WriteLine($"{simpleGun.GetBalls()} balls, {simpleGun.GetBallsLoaded()} loaded");
+                Console.WriteLine($"{simpleGun.Balls} balls, {simpleGun.GetBallsLoaded()} loaded");
                 if (simpleGun.IsEmpty())
                 {
                     Console.WriteLine("Space to shoot , r to reload, + to add ammo, q ti quit ");
@@ -20,7 +20,7 @@ namespace PaintballGun
                 char key = Console.ReadKey(true).KeyChar;
                 if (key == ' ') Console.WriteLine($"Shooting returned {simpleGun.Shoot()}");
                 else if (key == 'r') simpleGun.Reload();
-                else if (key == '+') simpleGun.SetBalls(simpleGun.GetBalls() + PGun.MAGAZINE_SIZE);
+                else if (key == '+') simpleGun.Balls += PGun.MAGAZINE_SIZE;
                 else if (key == 'q') return;
             }
         }

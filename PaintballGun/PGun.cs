@@ -9,6 +9,17 @@ namespace PaintballGun
         public const int MAGAZINE_SIZE = 16;
         private int balls = 0;
         private int ballsLoaded = 0;
+        public int Balls
+        {
+            get { return balls; }
+            set
+            {
+                if (value > 0)
+                    balls = value;
+                Reload();
+            }
+        }
+
 
         public int GetBallsLoaded() { return ballsLoaded; }
         public bool IsEmpty()  { return ballsLoaded == 0; }
@@ -37,5 +48,6 @@ namespace PaintballGun
             return true;
               
         }
+       
     }
 }
