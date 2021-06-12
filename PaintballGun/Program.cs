@@ -7,12 +7,10 @@ namespace PaintballGun
         static void Main(string[] args)
         {
             Console.WriteLine("Hello in Paintball test app! \n");
-
             PGun simpleGun = new PGun();
-
             while (true)
             {
-                Console.WriteLine($"{simpleGun.Balls} balls, {simpleGun.GetBallsLoaded()} loaded");
+                Console.WriteLine($"{simpleGun.Balls} balls, {simpleGun.BallsLoaded} loaded");
                 if (simpleGun.IsEmpty())
                 {
                     Console.WriteLine("Space to shoot , r to reload, + to add ammo, q ti quit ");
