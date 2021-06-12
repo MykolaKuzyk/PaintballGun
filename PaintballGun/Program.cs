@@ -7,7 +7,7 @@ namespace PaintballGun
         static void Main(string[] args)
         {
             Console.WriteLine("Hello in Paintball test app! \n");
-            PGun simpleGun = new PGun();
+            PGun simpleGun = new PGun(0,0,true);
             while (true)
             {
                 Console.WriteLine($"{simpleGun.Balls} balls, {simpleGun.BallsLoaded} loaded");
@@ -18,7 +18,7 @@ namespace PaintballGun
                 char key = Console.ReadKey(true).KeyChar;
                 if (key == ' ') Console.WriteLine($"Shooting returned {simpleGun.Shoot()}");
                 else if (key == 'r') simpleGun.Reload();
-                else if (key == '+') simpleGun.Balls += PGun.MAGAZINE_SIZE;
+                else if (key == '+') simpleGun.Balls += simpleGun.Magazine_Size;
                 else if (key == 'q') return;
             }
         }
